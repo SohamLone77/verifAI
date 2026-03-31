@@ -1,0 +1,16 @@
+# VerifAI Multi-Modal Requirements
+
+# Core
+Pillow>=10.0.0          # Image processing
+numpy>=1.24.0           # Numerical operations
+
+# Optional - for production use
+# torch>=2.0.0          # PyTorch for deep learning models
+# transformers>=4.30.0  # Hugging Face models
+# opencv-python>=4.8.0  # Video processing
+# easyocr>=1.7.0        # OCR
+# whisper>=1.1.0        # Speech recognition
+# torchvision>=0.15.0   # Image models
+
+# CLI
+click>=8.1.0

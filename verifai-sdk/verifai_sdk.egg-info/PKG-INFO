@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: verifai-sdk
+Version: 1.0.0
+Summary: Python SDK for VerifAI - AI Quality Review
+Home-page: https://github.com/verifai/verifai-sdk
+Author: VerifAI Team
+Author-email: support@verifai.ai
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: click>=8.1.0
+Requires-Dist: tenacity>=8.2.0
+Requires-Dist: python-dotenv>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# VerifAI SDK
+
+Python SDK for VerifAI - AI Quality Review.
+
+## Features
+
+- Single and batch review of AI-generated content
+- Multi-agent review with specialized agents
+- Cost tracking and ROI calculation
+- Compliance checks (GDPR, HIPAA, etc.)
+- Async support
+- CLI tools
+
+## Installation
+
+```bash
+cd verifai-sdk
+pip install -e .
+```
+
+## Quick Start
+
+```python
+from verifai_sdk import VerifAIClient
+
+client = VerifAIClient(api_key="your-api-key")
+result = client.review("Your AI-generated text")
+print(result.score)
+client.close()
+```
+
+## CLI
+
+```bash
+verifai review "The iPhone 15 has 8K video" --rubric factuality
+verifai improve "This is the best product ever!" --iterations 3
+verifai compliance "We collect user data" --framework gdpr
+verifai multi-agent "Sensitive content" --agents safety,factuality,brand
+verifai cost --days 30
+verifai roi --daily-volume 5000 --cost-per-review 0.05
+verifai batch reviews.txt --output results.json
+```
+
+## Examples
+
+```bash
+python examples/basic_usage.py
+python examples/async_usage.py
+```
+
+## Testing
+
+```bash
+pytest tests/ -v
+```
+
+## Configuration
+
+Environment variables:
+
+- VERIFAI_API_KEY
+- VERIFAI_BASE_URL
+- VERIFAI_TIMEOUT
+- VERIFAI_MAX_RETRIES
+- VERIFAI_RETRY_BACKOFF
+- VERIFAI_CACHE_ENABLED
+- VERIFAI_CACHE_TTL
+- VERIFAI_LOG_LEVEL

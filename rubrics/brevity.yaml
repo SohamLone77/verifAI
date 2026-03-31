@@ -1,0 +1,33 @@
+title: Brevity Rubric
+description: >
+  Defines token budgets per task type and redundancy patterns to detect
+  unnecessarily verbose AI-generated text.
+
+default_token_budget: 300
+
+token_budgets_by_task:
+  classify: 150    # Just a score + brief justification
+  rewrite: 300     # Full paragraph rewrite
+  iterative: 250   # Constrained revision
+
+redundancy_patterns:
+  # Empty openers
+  - "(?i)^in today's (world|age|society|landscape)"
+  - "(?i)^(it is|it's) (important|worth noting|crucial|essential) (to note |to mention )?that"
+  - "(?i)^as (an ai|a language model)"
+  - "(?i)^certainly[,!]?"
+  - "(?i)^of course[,!]?"
+  - "(?i)^absolutely[,!]?"
+  - "(?i)^sure[,!]?"
+  # Padding phrases
+  - "(?i)needless to say"
+  - "(?i)it goes without saying"
+  - "(?i)as I mentioned (before|earlier|above|previously)"
+  - "(?i)to reiterate"
+  - "(?i)in summary,? (to summarize|in conclusion|as stated)"
+  # Repetitive transitions
+  - "(?i)furthermore,? moreover"
+  - "(?i)in addition.{0,20}additionally"
+
+penalty_per_pattern: 0.05
+max_budget_penalty: 0.50

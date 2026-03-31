@@ -1,0 +1,71 @@
+name: verifai
+version: "1.0.0"
+description: >
+  VerifAI is a reinforcement-learning environment for evaluating and improving
+  AI-generated writing quality. Agents receive prompts with rubrics and must
+  produce or revise text to maximize a composite quality score.
+
+tasks:
+  - name: classify
+    description: "EASY — Classify the quality of a given AI output on a 0-10 scale."
+    difficulty: easy
+    max_steps: 1
+  - name: rewrite
+    description: "MEDIUM — Rewrite the AI output to satisfy all rubric criteria."
+    difficulty: medium
+    max_steps: 3
+  - name: iterative
+    description: "HARD — Multi-turn revision under token budget and safety constraints."
+    difficulty: hard
+    max_steps: 5
+
+action_schema:
+  type: object
+  required:
+    - action_type
+    - content
+  properties:
+    action_type:
+      type: string
+      enum: [classify, rewrite, submit]
+      description: "The type of action the agent is taking."
+    content:
+      type: string
+      description: "The agent's text output or classification score."
+    metadata:
+      type: object
+      description: "Optional metadata (reasoning, confidence, etc.)"
+      additionalProperties: true
+
+observation_schema:
+  type: object
+  required:
+    - prompt
+    - current_output
+    - rubric
+    - step
+    - task
+  properties:
+    prompt:
+      type: string
+    current_output:
+      type: string
+    rubric:
+      type: object
+    step:
+      type: integer
+    task:
+      type: string
+    done:
+      type: boolean
+    score:
+      type: number
+      minimum: 0.0
+      maximum: 1.0
+
+reward_range: [0.0, 1.0]
+
+spaces:
+  deployment: huggingface
+  sdk: docker
+  port: 7860

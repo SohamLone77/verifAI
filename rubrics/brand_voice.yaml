@@ -1,0 +1,49 @@
+title: Brand Voice Rubric
+description: >
+  Defines tone rules, forbidden phrases, and style guidance for maintaining
+  a consistent, professional, and trustworthy brand voice in AI-generated content.
+
+tone_principles:
+  - name: professional
+    description: Clear, confident language without being stiff or corporate.
+  - name: helpful
+    description: Focused on the reader's needs, not self-promotion.
+  - name: honest
+    description: Transparent about limitations; no false promises.
+  - name: inclusive
+    description: Gender-neutral, culturally sensitive language.
+
+forbidden_phrases:
+  # Hype / overselling
+  - "revolutionary product"
+  - "game changer"
+  - "synergy"
+  - "disruptive innovation"
+  - "paradigm shift"
+  - "world-class"
+  - "best in class"
+  - "industry-leading"
+  # Filler / corporate speak
+  - "leverage the power of"
+  - "at the end of the day"
+  - "move the needle"
+  - "circle back"
+  - "low-hanging fruit"
+  - "deep dive"
+  - "think outside the box"
+  - "cutting edge"
+  - "bleeding edge"
+  # Vague boasts
+  - "we are the best"
+  - "number one choice"
+  - "unparalleled excellence"
+
+style_guidance:
+  prefer_active_voice: true
+  max_sentence_length_words: 30
+  avoid_jargon: true
+  use_gender_neutral_pronouns: true
+  oxford_comma: true
+
+penalty_per_phrase: 0.15
+max_penalty: 0.60

@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  verifai:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ENV=development
+    volumes:
+      - .:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 7860 --reload
+    restart: unless-stopped

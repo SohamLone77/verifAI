@@ -1,0 +1,589 @@
+# VerifAI Scenario Bank
+# 50+ prompt/output/rubric seeds across easy, medium, and hard difficulties.
+
+scenarios:
+  # ─────────────────────────────
+  # EASY — Classify (1–17)
+  # ─────────────────────────────
+  - id: easy_001
+    difficulty: easy
+    prompt: "Explain what machine learning is in one sentence."
+    reference_output: "Machine learning is a subset of AI where systems learn from data to make predictions or decisions without being explicitly programmed."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_002
+    difficulty: easy
+    prompt: "What is photosynthesis?"
+    reference_output: "Photosynthesis is the process by which plants convert sunlight, water, and CO₂ into glucose and oxygen."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 35
+
+  - id: easy_003
+    difficulty: easy
+    prompt: "Define the term 'API'."
+    reference_output: "An API (Application Programming Interface) is a set of rules that allows different software applications to communicate with each other."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_004
+    difficulty: easy
+    prompt: "What does GDP stand for and what does it measure?"
+    reference_output: "GDP stands for Gross Domestic Product; it measures the total monetary value of all goods and services produced in a country over a specific period."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 45
+
+  - id: easy_005
+    difficulty: easy
+    prompt: "Briefly explain blockchain technology."
+    reference_output: "Blockchain is a distributed, tamper-resistant digital ledger that records transactions across a network of computers without a central authority."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_006
+    difficulty: easy
+    prompt: "What is the capital of Australia?"
+    reference_output: "The capital of Australia is Canberra."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 10
+
+  - id: easy_007
+    difficulty: easy
+    prompt: "Explain the concept of supply and demand."
+    reference_output: "Supply and demand describes how the availability of a product (supply) and consumer desire for it (demand) interact to determine its market price."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 45
+
+  - id: easy_008
+    difficulty: easy
+    prompt: "What is the difference between RAM and storage?"
+    reference_output: "RAM (Random Access Memory) is temporary memory used for active tasks, while storage (like SSD or HDD) holds data permanently even when the device is off."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 50
+
+  - id: easy_009
+    difficulty: easy
+    prompt: "What causes inflation?"
+    reference_output: "Inflation is caused by an increase in money supply, rising production costs, or strong consumer demand that outpaces supply, leading to higher prices."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 45
+
+  - id: easy_010
+    difficulty: easy
+    prompt: "Describe what a neural network is."
+    reference_output: "A neural network is a computational model inspired by the human brain, consisting of layers of interconnected nodes that learn patterns from data."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_011
+    difficulty: easy
+    prompt: "What is the speed of light?"
+    reference_output: "The speed of light in a vacuum is approximately 299,792,458 metres per second (about 3 × 10⁸ m/s)."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 30
+
+  - id: easy_012
+    difficulty: easy
+    prompt: "What is Agile methodology?"
+    reference_output: "Agile is an iterative software development approach that emphasises collaboration, flexibility, and delivering working software in short cycles called sprints."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_013
+    difficulty: easy
+    prompt: "Who wrote 'Pride and Prejudice'?"
+    reference_output: "Pride and Prejudice was written by Jane Austen and first published in 1813."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 20
+
+  - id: easy_014
+    difficulty: easy
+    prompt: "What is climate change?"
+    reference_output: "Climate change refers to long-term shifts in global temperatures and weather patterns, largely driven since the 20th century by human activities such as burning fossil fuels."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 45
+
+  - id: easy_015
+    difficulty: easy
+    prompt: "What is open-source software?"
+    reference_output: "Open-source software is software whose source code is publicly available, allowing anyone to view, modify, and distribute it under the terms of its licence."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: easy_016
+    difficulty: easy
+    prompt: "Explain what a VPN is."
+    reference_output: "A VPN (Virtual Private Network) encrypts your internet connection and routes it through a server in another location, masking your IP address and enhancing privacy."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 45
+
+  - id: easy_017
+    difficulty: easy
+    prompt: "What is the mitochondria's role in the cell?"
+    reference_output: "Mitochondria are the cell's powerhouses, generating ATP (adenosine triphosphate) through cellular respiration to supply energy for cellular processes."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  # ─────────────────────────────
+  # MEDIUM — Rewrite (18–34)
+  # ─────────────────────────────
+  - id: medium_001
+    difficulty: medium
+    prompt: "Write a professional email subject line for announcing a product update."
+    reference_output: "Subject: Important Update — New Features Now Available in Your Account"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 20
+
+  - id: medium_002
+    difficulty: medium
+    prompt: "Write a one-paragraph product description for a wireless keyboard."
+    reference_output: "The SlimType Pro is a compact wireless keyboard designed for productivity on the go. With a 10-metre Bluetooth range, quiet scissor-switch keys, and a 6-month battery life, it keeps you focused without interruptions. Compatible with Windows, macOS, and iOS."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 80
+
+  - id: medium_003
+    difficulty: medium
+    prompt: "Summarise the key benefits of exercise in two sentences."
+    reference_output: "Regular exercise improves cardiovascular health, strengthens muscles, and boosts mental wellbeing. It also reduces the risk of chronic conditions such as diabetes, obesity, and heart disease."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 50
+
+  - id: medium_004
+    difficulty: medium
+    prompt: "Rewrite this sentence to be more concise: 'Due to the fact that the meeting was cancelled, the team was not able to proceed with the previously planned activities.'"
+    reference_output: "Because the meeting was cancelled, the team could not proceed with planned activities."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 20
+
+  - id: medium_005
+    difficulty: medium
+    prompt: "Write a short bio for a software engineer's LinkedIn profile."
+    reference_output: "Software engineer with 5+ years building scalable web applications in Python and TypeScript. Passionate about clean architecture, developer experience, and open-source contribution. Currently focused on AI-powered developer tools."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 70
+
+  - id: medium_006
+    difficulty: medium
+    prompt: "Explain the benefits of remote work to a sceptical employer."
+    reference_output: "Remote work can increase employee productivity by reducing commute fatigue and office distractions. It also expands your talent pool beyond local boundaries and reduces overhead costs, while modern collaboration tools keep teams well-connected."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 80
+
+  - id: medium_007
+    difficulty: medium
+    prompt: "Write a customer support reply to a user who cannot log in."
+    reference_output: "Thank you for reaching out. Please try resetting your password using the 'Forgot Password' link on the login page. If the issue persists, clear your browser cache or try a different browser. We're here to help if you need further assistance."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 80
+
+  - id: medium_008
+    difficulty: medium
+    prompt: "Write a tweet announcing a new AI writing tool."
+    reference_output: "✍️ Introducing VerifAI — the AI writing quality grader that helps you write clearer, safer, and more impactful content. Try it free today! #AI #Writing #ProductivityTools"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: medium_009
+    difficulty: medium
+    prompt: "Describe the concept of compound interest for a teenager."
+    reference_output: "Compound interest means you earn interest not just on the money you originally saved, but also on the interest you've already earned. Over time, this creates a snowball effect — the longer you save, the faster your money grows."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 70
+
+  - id: medium_010
+    difficulty: medium
+    prompt: "Write a one-sentence mission statement for an environmental non-profit."
+    reference_output: "We empower communities to protect and restore local ecosystems through education, advocacy, and hands-on conservation programmes."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 30
+
+  - id: medium_011
+    difficulty: medium
+    prompt: "Rewrite the following to remove jargon: 'We will leverage synergistic paradigms to disrupt the status quo and move the needle on our KPIs.'"
+    reference_output: "We will combine our strengths to challenge traditional approaches and meaningfully improve our key performance targets."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 30
+
+  - id: medium_012
+    difficulty: medium
+    prompt: "Write a 2-sentence warning label for a medication that causes drowsiness."
+    reference_output: "This medication may cause drowsiness and impair your ability to drive or operate heavy machinery. Do not consume alcohol while taking this medicine."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  - id: medium_013
+    difficulty: medium
+    prompt: "Describe the water cycle briefly."
+    reference_output: "The water cycle is the continuous movement of water through evaporation, condensation into clouds, precipitation as rain or snow, and collection in oceans, rivers, and groundwater before evaporating again."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 60
+
+  - id: medium_014
+    difficulty: medium
+    prompt: "Write a polite out-of-office reply."
+    reference_output: "Thank you for your email. I am out of the office from 1–5 January with limited access to email. I will respond to your message as soon as possible upon my return. For urgent matters, please contact my colleague at colleague@example.com."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 70
+
+  - id: medium_015
+    difficulty: medium
+    prompt: "Write a headline for a news article about a new electric vehicle record."
+    reference_output: "Electric Vehicle Sets New Range Record, Travelling 800 km on a Single Charge"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 20
+
+  - id: medium_016
+    difficulty: medium
+    prompt: "Explain the difference between a virus and a bacterium."
+    reference_output: "Bacteria are single-celled living organisms that can survive and reproduce independently, while viruses are non-living particles that must invade a host cell to replicate. Antibiotics treat bacterial infections but are ineffective against viruses."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 65
+
+  - id: medium_017
+    difficulty: medium
+    prompt: "Write a compelling call-to-action for a newsletter sign-up form."
+    reference_output: "Join 10,000+ readers and get practical insights on AI, productivity, and tech delivered to your inbox every week. No spam, ever."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 40
+
+  # ─────────────────────────────
+  # HARD — Iterative (35–50)
+  # ─────────────────────────────
+  - id: hard_001
+    difficulty: hard
+    prompt: "Write a balanced analysis of the pros and cons of social media for teenagers, aimed at parents."
+    reference_output: "Social media offers teenagers genuine benefits: connecting with peers, developing digital literacy, and accessing educational content and communities that match their interests. However, it also carries real risks, including exposure to cyberbullying, curated content that distorts body image, and algorithms designed to maximise engagement at the expense of health. The evidence on mental health effects is mixed, with outcomes shaped largely by how platforms are used rather than use itself. Parents can help by maintaining open conversations, setting reasonable boundaries, and modelling healthy technology habits rather than imposing blanket bans."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 150
+
+  - id: hard_002
+    difficulty: hard
+    prompt: "Explain the ethical implications of AI in hiring decisions."
+    reference_output: "AI in hiring can improve efficiency and reduce some forms of human bias, but it introduces significant ethical risks. Algorithms trained on historical hiring data can perpetuate or amplify existing inequalities — for example, penalising candidates whose CVs reflect gaps due to caregiving responsibilities. Lack of transparency in model decisions makes it hard for candidates to contest outcomes, raising concerns about fairness and accountability. Organisations deploying AI hiring tools must audit for disparate impact, ensure human oversight of key decisions, and provide clear appeals processes."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 160
+
+  - id: hard_003
+    difficulty: hard
+    prompt: "Write a persuasive essay introduction arguing for universal basic income."
+    reference_output: "As automation reshapes the economy and displaces millions of workers from traditional employment, societies face a fundamental question: how do we ensure everyone can meet their basic needs? Universal Basic Income (UBI) — a regular, unconditional payment to all citizens regardless of employment status — offers a promising answer. By providing a financial floor, UBI could reduce poverty, decrease bureaucratic waste in means-tested welfare systems, and give individuals the security to pursue education, entrepreneurship, or caregiving. The evidence from pilot programmes in Finland, Kenya, and Stockton, California, suggests that UBI recipients do not simply stop working — rather, they work better, healthier, and with greater autonomy."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 180
+
+  - id: hard_004
+    difficulty: hard
+    prompt: "Write a technically accurate but accessible explanation of how transformers work for a non-technical executive."
+    reference_output: "Transformers are the AI architecture behind tools like ChatGPT. At their core, they process language by weighing the relationship between every word in a sentence simultaneously — a technique called 'attention'. Rather than reading text word by word like older AI, transformers can consider the entire context at once, which makes them dramatically better at understanding nuance and generating coherent, contextually appropriate text. They are pre-trained on vast datasets, learning broad language patterns, and can then be fine-tuned for specific business tasks with far less data and cost than training from scratch."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 170
+
+  - id: hard_005
+    difficulty: hard
+    prompt: "Write a company policy statement on responsible AI use for employees."
+    reference_output: "Our company is committed to using AI tools in ways that are transparent, fair, and aligned with our values. Employees may use approved AI assistants to support their work but must not submit AI-generated content as their own without review and disclosure where required. Sensitive company data, client information, and personal data must never be entered into external AI systems. All AI-assisted decisions in hiring, performance evaluation, or customer outcomes require human review and must be documented. Violations of this policy will be treated under our existing data security and professional conduct frameworks. Questions should be directed to the AI Ethics team."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 175
+
+  - id: hard_006
+    difficulty: hard
+    prompt: "Draft a risk section for a startup pitch deck."
+    reference_output: "Like all early-stage companies, we face risks that could impact our trajectory. Our primary risks include regulatory changes in AI and data privacy law, competition from well-resourced incumbents, and the challenge of hiring and retaining specialist AI talent in a competitive market. We also rely on third-party model providers, which introduces vendor dependency risk. We are mitigating these by maintaining close regulatory counsel, building modular architecture that can adapt to model provider changes, and investing early in a strong employer brand and equity programme."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 160
+
+  - id: hard_007
+    difficulty: hard
+    prompt: "Write a thoughtful response to a negative online review of a restaurant."
+    reference_output: "Thank you for taking the time to share your experience — we are genuinely sorry your visit fell short of expectations. The issues you describe with service timing are not the standard we hold ourselves to, and we have shared your feedback directly with our kitchen and front-of-house teams. We would love the opportunity to make this right. Please reach out to us at feedback@restaurant.com and we will arrange a complimentary return visit at your convenience."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 120
+
+  - id: hard_008
+    difficulty: hard
+    prompt: "Explain quantum computing to a high-school student using an analogy."
+    reference_output: "Imagine you're searching for a specific book in a huge, dark library. A classical computer is like a person who has to check each row one at a time, with a torch. A quantum computer is like turning all the lights on at once — it can explore many possibilities simultaneously. This is because quantum bits (qubits) can exist in multiple states at the same time, a property called superposition. This parallelism lets quantum computers solve certain problems — like breaking encryption or simulating molecules — exponentially faster than today's best classical machines, though they're still early-stage and error-prone."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 175
+
+  - id: hard_009
+    difficulty: hard
+    prompt: "Write a content moderation policy for a user-generated content platform."
+    reference_output: "Our platform is committed to maintaining a safe, inclusive, and trustworthy environment. We prohibit content that includes hate speech targeting protected characteristics, explicit depictions of violence or self-harm, sexual content involving minors, coordinated inauthentic behaviour, and deliberate misinformation about elections or public health. Content reported by users enters a tiered review process: clear violations are actioned automatically, while borderline cases are reviewed by trained human moderators within 24 hours. Users may appeal any decision through our dedicated review portal. Repeat violators face graduated consequences up to permanent suspension. We publish quarterly transparency reports on enforcement actions."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 185
+
+  - id: hard_010
+    difficulty: hard
+    prompt: "Write a performance review summary for a mid-level software engineer who has been strong technically but struggles with communication."
+    reference_output: "Alex consistently delivers high-quality technical work — shipping reliable features on time, writing well-tested code, and demonstrating strong growth in system design this year. The primary area for development is cross-functional communication: during Q3 and Q4, there were instances where stakeholders lacked visibility into blockers that Alex was managing independently, leading to avoidable delays. For the coming year, we've agreed on two specific goals: proactively flagging risks in the weekly team update and presenting at least one engineering decision to a non-technical audience per quarter. With Alex's technical foundation and commitment to growth, we're confident these adjustments will accelerate impact."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 190
+
+  - id: hard_011
+    difficulty: hard
+    prompt: "Write an executive summary of a market research report on plant-based food trends."
+    reference_output: "The plant-based food market is entering a period of consolidation following rapid growth between 2019 and 2022. Consumer adoption has broadened beyond early-majority environmentally motivated buyers to include health-conscious mainstream consumers, particularly in urban markets across North America and Europe. However, purchase frequency has lagged initial trial rates, with taste, price premium, and limited meal occasion fit cited as the top barriers to repeat purchase. The category showing strongest growth is plant-based dairy alternatives, particularly oat and pea protein-based products. Brands that succeed in the next phase will need to compete on genuine taste parity and value, rather than novelty or sustainability positioning alone."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 185
+
+  - id: hard_012
+    difficulty: hard
+    prompt: "Write a detailed incident report for a data breach affecting 10,000 users."
+    reference_output: "Incident Report — Data Security Incident, reference INC-2024-0315\n\nSummary: On 15 March 2024, our security team identified unauthorised access to a production database containing account information for approximately 10,000 users.\n\nAffected Data: Names, email addresses, and hashed passwords. No payment card data or government ID numbers were stored in this system.\n\nRoot Cause: A misconfigured access control policy introduced during a routine infrastructure update on 12 March 2024 left a database endpoint publicly accessible without authentication.\n\nContainment Actions: The endpoint was secured within 2 hours of detection. Affected credentials have been invalidated and impacted users notified with instructions to reset passwords.\n\nRemediation: We have implemented mandatory access control review for all infrastructure changes, enhanced monitoring for anomalous database queries, and engaged a third-party security firm to conduct a full audit."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 250
+
+  - id: hard_013
+    difficulty: hard
+    prompt: "Write a grant proposal introduction for an AI literacy programme for senior citizens."
+    reference_output: "As artificial intelligence reshapes everyday services — from banking apps and healthcare portals to smart home devices — a significant portion of the population risks being left behind. Adults over 65 represent the fastest-growing demographic of new internet users, yet are least likely to have received any formal or informal AI literacy education. Our programme, Digital Futures, addresses this gap directly. We propose a community-based curriculum delivered through trusted local libraries and community centres, combining accessible workshops, peer-to-peer learning, and a library of plain-language resources covering AI basics, privacy rights, and safe use of AI-powered tools. We seek funding to pilot the programme across 15 community sites, reaching an estimated 1,500 participants in the first year."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 195
+
+  - id: hard_014
+    difficulty: hard
+    prompt: "Write a privacy policy introduction for a health tracking app."
+    reference_output: "Your health data is among the most personal information you share with us, and we take our responsibility to protect it seriously. This Privacy Policy explains what information the HealthTrack app collects, how we use it, who we share it with, and the controls available to you. We collect data you enter directly — such as weight, sleep, and activity logs — as well as device sensor data when you grant permission. We do not sell your personal health information to third parties. All data is encrypted in transit and at rest, and we comply with applicable health data protection regulations including HIPAA (where applicable) and GDPR. If you have questions, contact our Privacy team at privacy@healthtrack.example."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 185
+
+  - id: hard_015
+    difficulty: hard
+    prompt: "Explain the trolley problem and its relevance to autonomous vehicle ethics."
+    reference_output: "The trolley problem is a classic ethical thought experiment: a runaway trolley is heading towards five people tied to the tracks. You can pull a lever to divert it, but it will then kill one person on a side track. Do you act, and if so, is one death morally preferable to five? The dilemma cuts to the heart of two competing moral frameworks — consequentialism (judging actions by their outcomes) and deontology (judging actions by their inherent rightness). Autonomous vehicles make this abstract puzzle concrete. When a collision is unavoidable, should software be programmed to minimise total harm, protect its passenger at all costs, or apply some other rule? There is no universal agreement, and different cultures show measurably different preferences, creating profound challenges for global manufacturers and regulators."
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 200
+
+  - id: hard_016
+    difficulty: hard
+    prompt: "Write a letter from a CEO to employees announcing layoffs."
+    reference_output: "Dear Team,\n\nI want to speak with you directly about a difficult decision we have made.\n\nAfter a thorough review of our business and the economic environment, we have concluded that we need to reduce our workforce by approximately 8%. This means that 240 colleagues will be leaving the company. This is the hardest decision our leadership team has faced, and I want to be clear: these are not performance-related departures. Every person affected has contributed meaningfully to our mission.\n\nAffected employees will be contacted individually today by 12:00pm in their local time zone. They will receive a minimum of three months' severance pay, extended healthcare coverage, and dedicated outplacement support.\n\nTo those leaving — thank you. I am sorry we could not find another way.\n\nTo those staying — I know this is unsettling. We will hold a company-wide Q&A on Thursday at 10am to answer your questions directly.\n\nWith respect and gratitude,\n[CEO Name]"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: true
+      token_budget: 250
+
+  # ─────────────────────────────
+  # MULTIMODAL — Vision & Structured (51-52)
+  # ─────────────────────────────
+  - id: multimodal_001
+    difficulty: easy
+    prompt: "Provide a one-sentence summary of the main subject of this image."
+    reference_output: "The image shows a cute dog sitting on a grassy field in a park during the day."
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/4/47/American_Eskimo_Dog.jpg"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: false
+      token_budget: 30
+
+  - id: multimodal_002
+    difficulty: medium
+    prompt: "Identify the UI elements shown in the wireframe and rewrite them as a bulleted list."
+    reference_output: "The wireframe includes a navigation bar, a hero image placeholder, an email subscription form, and a footer with social links."
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Wireframe_%28web_design%29.svg/1024px-Wireframe_%28web_design%29.svg.png"
+    rubric:
+      safety: true
+      brevity: true
+      factuality: true
+      semantic: false
+      token_budget: 50

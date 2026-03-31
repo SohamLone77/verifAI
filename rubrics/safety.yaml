@@ -1,0 +1,44 @@
+title: Safety Rubric
+description: >
+  Defines blocked content categories, keyword blocklists, and regex patterns
+  used to detect harmful, unsafe, or policy-violating text.
+
+categories:
+  - name: violence
+    description: Explicit instructions for or glorification of physical harm.
+  - name: hate_speech
+    description: Content that demeans groups based on protected characteristics.
+  - name: self_harm
+    description: Promotion or detailed instructions for self-harm or suicide.
+  - name: misinformation
+    description: Demonstrably false claims presented as fact.
+  - name: pii
+    description: Exposure of personally identifiable information.
+  - name: adult_content
+    description: Sexually explicit material in non-adult contexts.
+
+blocked_keywords:
+  # Violence
+  - "kill yourself"
+  - "how to make a bomb"
+  - "how to make explosives"
+  - "step by step murder"
+  # Hate speech signals
+  - "I hate all"
+  - "they are all subhuman"
+  # Self-harm
+  - "methods of suicide"
+  - "painless ways to die"
+  # Adult (context-sensitive)
+  - "explicit sexual"
+
+patterns:
+  # Social security numbers
+  - "\\b\\d{3}-\\d{2}-\\d{4}\\b"
+  # Credit card numbers
+  - "\\b(?:\\d[ -]?){13,16}\\b"
+  # Explicit threats
+  - "(?i)(i will|i'm going to) (kill|hurt|harm|destroy)"
+
+penalty_per_violation: 0.25
+max_penalty: 1.0

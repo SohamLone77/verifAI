@@ -1,0 +1,36 @@
+# Baseline committed reference scores for reproducibility
+# Generated: 2026-03-26 | Model: gpt-4o-mini
+
+results:
+  - task: classify
+    model: gemini-2.0-flash
+    scenario_id: easy_001
+    total_steps: 1
+    total_reward: 0.6812
+    final_score: 0.8241
+    success: true
+
+  - task: rewrite
+    model: gemini-2.0-flash
+    scenario_id: medium_003
+    total_steps: 2
+    total_reward: 1.1034
+    final_score: 0.7893
+    success: true
+
+  - task: iterative
+    model: gemini-2.0-flash
+    scenario_id: hard_001
+    total_steps: 4
+    total_reward: 2.3107
+    final_score: 0.7512
+    success: true
+
+summary:
+  mean_final_score: 0.7882
+  mean_success_rate: 1.0
+  note: >
+    These scores were computed on 2026-03-26 using the default composite grader
+    (rubric weight=0.65, semantic weight=0.35) with all-MiniLM-L6-v2 embeddings.
+    Rerun with `python baseline/run_baseline.py --task <name>` to verify.
+    Requires GEMINI_API_KEY env var set to a valid Gemini API key.

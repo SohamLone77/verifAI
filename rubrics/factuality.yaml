@@ -1,0 +1,45 @@
+title: Factuality Rubric
+description: >
+  Heuristics for detecting unverifiable or exaggerated claims in AI-generated text.
+  These rules flag patterns that often indicate factual overreach.
+
+claim_types:
+  - name: verifiable
+    description: Claims backed by measurable facts, statistics with sources, or documented events.
+    examples:
+      - "The Eiffel Tower is 330 meters tall."
+      - "Python 3.12 was released in October 2023."
+
+  - name: unverifiable
+    description: Absolute claims, sweeping generalisations, or unsourced statistics.
+    examples:
+      - "Everyone knows that..."
+      - "Science has proven that X cures Y."
+      - "100% of experts agree..."
+
+unverifiable_markers:
+  # Absolute universals
+  - "always"
+  - "never"
+  - "everyone"
+  - "nobody"
+  - "no one"
+  - "all people"
+  - "every person"
+  # False certainty
+  - "guaranteed"
+  - "100%"
+  - "without a doubt"
+  - "it is a fact"
+  - "proven fact"
+  - "scientifically proven"
+  - "studies show"
+  - "research shows"
+  - "experts agree"
+  # Hedged-but-overconfident
+  - "definitely the best"
+  - "clearly superior"
+  - "obviously true"
+
+penalty_per_marker: 0.10
+max_penalty: 0.50

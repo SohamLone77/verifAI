@@ -1,0 +1,2 @@
+[console_scripts]
+verifai = verifai_sdk.cli:cli
