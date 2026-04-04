@@ -89,3 +89,17 @@ async def status(session_id: str):
         "done": state.done,
         "total_reward": state.total_reward,
     }
+
+
+@router.get("/state/{session_id}")
+async def state(session_id: str):
+    """Return the full state + observation for an active session."""
+    session = session_store.get(session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail=f"Session '{session_id}' not found.")
+
+    return {
+        "session_id": session_id,
+        "state": session.state.model_dump(),
+        "observation": session.obs.model_dump(),
+    }

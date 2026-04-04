@@ -85,7 +85,7 @@ python inference.py
 
 ```bash
 # 1. Clone and install
-git clone https://huggingface.co/spaces/SohamLone77/verifai
+git clone https://huggingface.co/spaces/SohamLone77/verifAI
 cd verifai
 pip install -r requirements.txt
 
@@ -136,7 +136,7 @@ LOCAL_IMAGE_NAME=verifai:latest
 
 ## Deployment
 
-Hosted on [Hugging Face Spaces](https://huggingface.co/spaces/SohamLone77/verifai) using Docker SDK on port 7860.
+Hosted on [Hugging Face Spaces](https://huggingface.co/spaces/SohamLone77/verifAI) using Docker SDK on port 7860.
 
 ```bash
 bash scripts/deploy_hf.sh
