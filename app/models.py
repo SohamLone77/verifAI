@@ -129,7 +129,7 @@ class EpisodeInfo(BaseModel):
 # ---------------------------------------------------------------------------
 
 class ResetRequest(BaseModel):
-    task: TaskName
+    task: TaskName = TaskName.classify   # defaults to 'classify' if not supplied
     scenario_id: Optional[str] = None
     difficulty: Optional[Difficulty] = None
 

@@ -2,11 +2,12 @@
 from __future__ import annotations
 
 import uuid
+from typing import Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Body, HTTPException
 
 from app.environment import PromptReviewEnv
-from app.models import ResetRequest, State, StepRequest, StepResponse
+from app.models import ResetRequest, State, StepRequest, StepResponse, TaskName
 from app.session import session_store
 
 router = APIRouter()
@@ -14,11 +15,15 @@ _env = PromptReviewEnv()
 
 
 @router.post("/reset", response_model=dict)
-async def reset(request: ResetRequest):
+async def reset(request: Optional[ResetRequest] = Body(default=None)):
     """
     Start a new episode for the given task.
+    Body is fully optional — defaults to task='classify' if omitted.
     Returns the initial observation and a session_id for subsequent steps.
     """
+    if request is None:
+        request = ResetRequest(task=TaskName.classify)
+
     session_id = str(uuid.uuid4())
 
     try:
