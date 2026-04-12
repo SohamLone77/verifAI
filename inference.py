@@ -52,6 +52,12 @@ BENCHMARK = os.getenv("VERIFAI_BENCHMARK", "verifai")
 TASK_OVERRIDE = os.getenv("VERIFAI_TASK")
 
 
+def _format_open_interval_reward(value: float) -> str:
+    """Format reward to 2dp while keeping strict (0, 1) bounds for validators."""
+    clipped = max(0.01, min(0.99, float(value)))
+    return f"{clipped:.2f}"
+
+
 def _build_client() -> OpenAI:
     if not HF_TOKEN:
         print("HF_TOKEN is required but not set.", file=sys.stderr)
@@ -163,7 +169,7 @@ def _run_task(client: OpenAI, task_name: str) -> None:  # noqa: C901
             obs = step_response.observation
 
             rewards.append(step_response.reward.value)
-            reward_text = f"{step_response.reward.value:.2f}"
+            reward_text = _format_open_interval_reward(step_response.reward.value)
             done_text = str(step_response.done).lower()
             action_log = _format_action_for_log(action, assistant_text)
             error_text = last_error or "null"
@@ -182,7 +188,7 @@ def _run_task(client: OpenAI, task_name: str) -> None:  # noqa: C901
         last_error = " ".join(str(exc).split())
         success_text = "false"
     finally:
-        rewards_text = ",".join(f"{value:.2f}" for value in rewards)
+        rewards_text = ",".join(_format_open_interval_reward(value) for value in rewards)
         total_steps = state.step if state is not None else 0
         print(
             f"[END] success={success_text} steps={total_steps} rewards={rewards_text}"
