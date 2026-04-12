@@ -2,7 +2,7 @@
 test_graders.py — Grader determinism, range, and composite score assertions.
 
 Verifies:
-- Output scores are always in [0.0, 1.0]
+- Output scores are always in (0.0, 1.0)
 - Same input produces the same score (determinism) for rule-based grader
 - Composite score on reference scenarios is approximately 4.0/10 scaled (≈ 0.4 ± 0.1) for a poor output
 - Reference outputs from data bank score >= 0.5
@@ -46,23 +46,23 @@ def composite_grader() -> CompositeGrader:
 
 
 # ---------------------------------------------------------------------------
-# Score range [0.0, 1.0]
+# Score range (0.0, 1.0)
 # ---------------------------------------------------------------------------
 
 def test_rubric_grader_score_in_range_good(rubric_grader, rubric):
     result = rubric_grader.grade(SAMPLE_PROMPT, GOOD_OUTPUT, rubric)
     assert isinstance(result, GraderResult)
-    assert 0.0 <= result.score <= 1.0
+    assert 0.0 < result.score < 1.0
 
 
 def test_rubric_grader_score_in_range_bad(rubric_grader, rubric):
     result = rubric_grader.grade(SAMPLE_PROMPT, BAD_OUTPUT, rubric)
-    assert 0.0 <= result.score <= 1.0
+    assert 0.0 < result.score < 1.0
 
 
 def test_composite_grader_score_in_range(composite_grader, rubric):
     result = composite_grader.grade(SAMPLE_PROMPT, GOOD_OUTPUT, rubric)
-    assert 0.0 <= result.score <= 1.0
+    assert 0.0 < result.score < 1.0
 
 
 # ---------------------------------------------------------------------------

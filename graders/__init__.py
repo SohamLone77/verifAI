@@ -4,6 +4,10 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
+# Submission validators require task scores to be strictly within (0, 1).
+_SCORE_EPSILON = 1e-6
+
+
 @dataclass
 class GraderResult:
     """Result from any grader."""
@@ -14,7 +18,7 @@ class GraderResult:
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
-        self.score = max(0.0, min(1.0, self.score))
+        self.score = max(_SCORE_EPSILON, min(1.0 - _SCORE_EPSILON, self.score))
         self.passed = self.score >= 0.7
 
 

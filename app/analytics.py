@@ -11,6 +11,11 @@ import threading
 
 
 HUMAN_REVIEW_COST_USD = 0.15
+_SCORE_EPSILON = 1e-6
+
+
+def _normalize_open_interval_score(value: float) -> float:
+    return max(_SCORE_EPSILON, min(1.0 - _SCORE_EPSILON, float(value)))
 
 
 @dataclass
@@ -52,6 +57,7 @@ class AnalyticsStore:
 
     def append_episode(self, record: EpisodeRecord) -> None:
         with self._lock:
+            record.score = _normalize_open_interval_score(record.score)
             self._records.append(record)
             self._persist()
 
@@ -68,7 +74,7 @@ class AnalyticsStore:
         return EpisodeRecord(
             session_id=data.get("session_id", "unknown"),
             task_id=data.get("task_id", "unknown"),
-            score=float(data.get("score", 0.0)),
+            score=_normalize_open_interval_score(float(data.get("score", 0.0))),
             cost_usd=float(data.get("cost_usd", 0.0)),
             steps=int(data.get("steps", 0)),
             timestamp=data.get("timestamp", datetime.utcnow().isoformat()),
